@@ -1,0 +1,28 @@
+{% extends "template.html" %}
+{% block title %}Группы{% endblock %}
+{% block content %}
+    <div class="row row-cols-1 row-cols-sm-2 g-4 p indent">
+        {%for i in group%}
+            <a style="text-decoration: none;" href="/name_group/{{i.id}}">
+                <div class="col d-flex flex-column gap-2 background">
+                    <h4 class="fw-semibold mb-0 text-body-emphasis" _msttexthash="3574337" _msthash="62">{{i.name_russian}}</h4>
+                    <p class="text-body-secondary" _msttexthash="18398406" _msthash="63">Абзац текста под заголовком для пояснения заголовка.</p>
+                </div>
+            </a>
+        {%endfor%}
+    </div>
+<style>
+    .indent {
+        padding: 100px;
+    }
+    .grid {
+        display: grid;
+          grid-template-columns: 1fr 350px 1fr;
+          grid-template-rows: repeat(3, 150px);
+          /* Отступы между рядами */
+          row-gap: 50px;
+          /* Отступы между колонками */
+          column-gap: 20px;
+    }
+</style>
+{% endblock %}
